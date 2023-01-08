@@ -35,13 +35,21 @@ const IntroReducerNew = () => {
         };
         dispatch(action)
     }
+    const handleComplete = (id) => {
+        console.log(id)
+        const action = {
+            type: "SUCCESS",
+            payload: id,
+        };
+        dispatch(action)
+    }
     return (
         <>
             <h1>todoApp</h1>
             <hr />
             <div className="row">
                 <div className="col-7">
-                    <List items={todos} onDeleteTodo={handleDelete} />
+                    <List items={todos} onDeleteTodo={handleDelete}  onCompleted={handleComplete}/>
                 </div>
                 <div className="col-5">
                     <Form onNewTodo={handleNewTodo}  />

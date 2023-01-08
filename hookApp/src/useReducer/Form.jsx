@@ -16,10 +16,7 @@ const Form = ({ onNewTodo, onDeleteTodo }) => {
         onNewTodo(newTodo);
         onResert(description);
     };
-    const deletedElemento = (e) => {
-        onDeleteTodo(e.target.value)
-        // return ;
-    }
+   
     return (
         <>
             <h4>agregar ToDo</h4>
