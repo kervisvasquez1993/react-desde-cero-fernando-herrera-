@@ -1,7 +1,7 @@
 import React from "react";
 import useForm from "../useEffect/hooks/useForm";
 
-const Form = ({ onNewTodo }) => {
+const Form = ({ onNewTodo, onDeleteTodo }) => {
     const { description, onInputChange, onResert } = useForm({
         description: "",
     });
@@ -16,6 +16,10 @@ const Form = ({ onNewTodo }) => {
         onNewTodo(newTodo);
         onResert(description);
     };
+    const deletedElemento = (e) => {
+        onDeleteTodo(e.target.value)
+        // return ;
+    }
     return (
         <>
             <h4>agregar ToDo</h4>

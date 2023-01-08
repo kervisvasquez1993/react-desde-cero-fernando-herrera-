@@ -1,10 +1,10 @@
 export const todoReducer = (initialstate, action) => {
     switch (action.type) {
-        case "ADD_TODO":
-            return {
-                ...initialstate,
-                todos: [...initialstate.todos, action.todo],
-            };
+        case "ADD":
+           return [...initialstate, action.payload]
+        
+           case "DELETE":
+                return initialstate.filter((value) => value.id !== action.payload);
         default: 
             return {};
     }
