@@ -34,11 +34,17 @@ const useTodo = () => {
         };
         dispatch(action);
     };
+
+    const todoCaount = () => todos.length;
+
+    const todosCauntPending = todos.filter((todo) => todo.done === true).length;
     return {
         handleNewTodo,
         handleDelete,
         handleComplete,
         todos,
+        todoCaount,
+        todosCauntPending,
     };
 };
 
