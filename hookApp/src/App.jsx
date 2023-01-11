@@ -6,6 +6,7 @@ import FocusScreen from './useRef/FocusScreen'
 import CounterApp from './useState/CounterApp'
 // import IntroReducer from './useReducer/IntroReducer'
 import IntroReducerNew from './useReducer/IntroReducerNew'
+import MainApp from './useContext/MainApp'
 // import CounterWithHook from './WithHook/CounterWithHook'
 
 
@@ -13,7 +14,7 @@ const App = () => {
   return (
     <>
      
-          <IntroReducerNew /> 
+          <MainApp /> 
        
     </>
   )
