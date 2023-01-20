@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate, Link } from "react-router-dom";
 import AboutPage from "./AboutPage";
+import UserProvider from "./context/UserProvider";
 import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
 import NavBar from "./Menu/NavBar";
@@ -7,9 +8,9 @@ import NotEncontrado from "./NotEncontrado";
 
 const MainApp = () => {
     return (
-        <>
+        <UserProvider>
             <div>MainApp</div>
-           <NavBar/>
+            <NavBar />
             <hr />
             <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -18,7 +19,7 @@ const MainApp = () => {
                 {/* <Route path="/*" element={<NotEncontrado />} /> */}
                 <Route path="/*" element={<Navigate to="/about" />} />
             </Routes>
-        </>
+        </UserProvider>
     );
 };
 

@@ -13,7 +13,7 @@ const NavBar = () => {
                         <ul className="navbar-nav">
                             <NavLink
                                 to="/"
-                                className={({isActive}) =>
+                                className={({ isActive }) =>
                                     `nav-link ${isActive ? "active" : ""}`
                                 }
                             >
@@ -21,7 +21,7 @@ const NavBar = () => {
                             </NavLink>
                             <NavLink
                                 to="/about"
-                                className={({isActive}) =>
+                                className={({ isActive }) =>
                                     `nav-link ${isActive ? "active" : ""}`
                                 }
                             >
