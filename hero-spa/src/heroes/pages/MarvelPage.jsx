@@ -1,4 +1,5 @@
 import React from "react";
+import { TarjetaHero } from "../components/TarjetaHero";
 import { getHeroByPublisher } from "../helpers/getheroBypublisher";
 
 export const MarvelPage = () => {
@@ -6,9 +7,12 @@ export const MarvelPage = () => {
     return (
         <>
             <h2>Marvel Page</h2>
-            {heroes.map((hero) => (
-                <h4 key={hero.id}> {hero.superhero}</h4>
-            ))}
+            <hr />
+            <div className="row rows-cols-1 row-cols-md-3 g-3">
+                {heroes.map((hero) => {
+                    return <TarjetaHero key={hero.id} hero={hero} />;
+                })}
+            </div>
         </>
     );
 };
