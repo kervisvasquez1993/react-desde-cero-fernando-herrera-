@@ -13,18 +13,18 @@ const LayoutHero = ({ getHeroforId }) => {
         superhero,
     } = getHeroforId;
     return (
-        <div className="card">
-            <ImgHero imgSrc={id} />
-            <div className="card-body">
-                <h5 className="card-title p-3">{superhero}</h5>
-                <p className="card-text">caracteres : {characters}</p>
-                <p className="card-text">
-                    primera impresión : {first_appearance}
-                </p>
-                <p className="card-text">
-                    publicado : {publisher}
-                </p>
-                <p className="card-text"> alter_ego : {alter_ego}</p>
+        <div className="row mt-5">
+            <div className="col-8">
+                <ImgHero imgSrc={id} />
+                <div className="card-body">
+                    <h5 className="card-title p-3">{superhero}</h5>
+                    <p className="card-text">caracteres : {characters}</p>
+                    <p className="card-text">
+                        primera impresión : {first_appearance}
+                    </p>
+                    <p className="card-text">publicado : {publisher}</p>
+                    <p className="card-text"> alter_ego : {alter_ego}</p>
+                </div>
             </div>
         </div>
     );
@@ -36,6 +36,9 @@ export const HeroShow = () => {
     return getHeroforId != undefined ? (
         <LayoutHero getHeroforId={getHeroforId} />
     ) : (
-        <h3>Pagina no enconrada</h3>
+        <h3 className="py-5">
+            el parametro <span className="alert alert-danger">{id}</span> no
+            pudo ser encontrado
+        </h3>
     );
 };
