@@ -11,3 +11,12 @@ export const getHeroById = (id) => {
     return heroes.find((hero) => hero.id === id);
 };
 
+
+export const getHeroByName = (name) => {
+    // return heroes.find((hero) => hero. === id);
+    name = name.toLocaleLowerCase();
+    if(name.length === 0) return [];
+    return heroes.filter(hero => hero.superhero.toLocaleLowerCase().includes(name));
+
+};
+

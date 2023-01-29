@@ -2,12 +2,15 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import { useForm } from "../hooks/useForm";
+import { getHeroByName } from "../helpers/getheroBypublisher";
+import { TarjetaHero } from "../components/TarjetaHero";
 
 export const SearchPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { q = "" } = queryString.parse(location.search);
     // console.log(query);
+    const heroes = getHeroByName(q)
     const { searchHero, onInputChange } = useForm({
         searchHero: "",
     });
@@ -18,6 +21,7 @@ export const SearchPage = () => {
         // console.log({ searchHero });
         navigate(`?q=${searchHero.toLowerCase().trim()}`);
     };
+    console.log(heroes);
     return (
         <>
             <h1>Search</h1>
@@ -48,6 +52,10 @@ export const SearchPage = () => {
                     <div className="alert alert-danger">
                         no hay heroe <b>{q}</b>
                     </div>
+
+                    {heroes.map(hero => {
+                        return <TarjetaHero key={hero.id} hero={hero}/>
+                    })}
                 </div>
             </div>
         </>
