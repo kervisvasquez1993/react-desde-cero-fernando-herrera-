@@ -1,11 +1,13 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { LoginPage } from "../pages";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { LoginPage, RegisterPage } from "../pages";
 
 export const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="" element={<LoginPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="register" element={<RegisterPage />} />
+            <Route path="/*" element={<Navigate to="/auth/login" />} />
         </Routes>
     );
 };

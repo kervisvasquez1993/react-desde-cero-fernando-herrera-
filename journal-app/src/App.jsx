@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
+import { RouteApp } from "./routes/RouteApp";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  
+    return <RouteApp />;
+};
 
-export default App
+export default App;
