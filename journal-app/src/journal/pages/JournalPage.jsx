@@ -2,13 +2,15 @@ import { ManOutlined } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import React from "react";
 import { JournalLayout } from "../Layout/JournalLayout";
+import { NothingSelectedview } from "../views/NothingSelectedview";
 
 export const JournalPage = () => {
     return (
         <JournalLayout>
-            <Typography >
+            {/* <Typography >
                 Deserunt commodo pariatur proident ipsum ex voluptate sunt.
-            </Typography>
+            </Typography> */}
+            <NothingSelectedview/>
             {/* <ManOutlined/> */}
         </JournalLayout>
     );
