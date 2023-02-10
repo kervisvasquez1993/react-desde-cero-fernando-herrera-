@@ -20,8 +20,7 @@ export const NothingSelectedview = () => {
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="h5" color="white">
-                    {" "}
-                    Selecciona o Crea una Ebtrada{" "}
+                    Selecciona o Crea una Entrada
                 </Typography>
             </Grid>
         </Grid>
