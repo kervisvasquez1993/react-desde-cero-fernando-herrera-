@@ -2,14 +2,15 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { increment,decrement } from "./store/slices/counter/";
+import { increment, decrement, incremetBy } from "./store/slices/counter/";
 
 function App() {
     // const [count, setCount] = useState(0);
     // useSelector sirve para tomar una pieza del state
     // useDispatch
-    const {counter} = useSelector((state) => state.counter);
+    const { counter } = useSelector((state) => state.counter);
     const dispath = useDispatch();
+    const incrementValue = 2;
     console.log(counter);
     return (
         <div className="App">
@@ -40,6 +41,13 @@ function App() {
                     }}
                 >
                     -1
+                </button>
+                <button
+                    onClick={() => {
+                        dispath(incremetBy(incrementValue));
+                    }}
+                >
+                    increment for {incrementValue}
                 </button>
             </div>
         </div>
