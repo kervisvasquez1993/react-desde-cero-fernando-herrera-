@@ -11,10 +11,14 @@ export const authSlice = createSlice({
         erorrMessage: null,
     },
     reducers: {
-        login: (state, actions) => {},
+        login: (state, actions) => {
+            console.log("desde login");
+        },
         logout: (state, payload) => {},
         register: (state, actions) => {},
-        checkingCredentials: (state) => {},
+        checkingCredentials: (state) => {
+            state.status = "checking";
+        },
     },
 });
 // Action creators are generated for each case reducer function

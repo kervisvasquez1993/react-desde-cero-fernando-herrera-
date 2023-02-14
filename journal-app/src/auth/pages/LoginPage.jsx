@@ -3,18 +3,23 @@ import { Google } from "@mui/icons-material";
 import { Grid, Typography, TextField, Button, Link } from "@mui/material";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { useForm } from "../../hooks/useForm";
+import { checkingAuthenticate, startGoogle } from "../../store/auth/thunks";
+import { useDispatch } from "react-redux";
 
 export const LoginPage = () => {
+    const dispatch = useDispatch();
     const { email, password, onInputChange } = useForm({
         email: "email@gmail.com",
         password: "password",
     });
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log({ email, password });
+        // console.log({ email, password });
+        dispatch(checkingAuthenticate());
     };
     const onGoogleSingIn = () => {
         console.log("onGoogle SingIn");
+        dispatch(startGoogle())
     };
     return (
         <AuthLayout title={"Login"}>
