@@ -8,20 +8,39 @@ const formData = {
     password: "123456789",
     displayName: "kervis vasquez",
 };
+const formValidate = {
+    email: [(value) => value.includes("@"), "El correo debe tener un @"],
+    password: [
+        (value) => value.length <= 6,
+        "El Password debe tener mas de 6 letras",
+    ],
+    displayName: [
+        (value) => value.length >= 1,
+        "El nombre debe tener al manos un carater",
+    ],
+};
 export const RegisterPage = () => {
-    const { displayName, email, password, onInputChange, formState } =
-        useForm(formData);
-    const onSubmit = (e) => {
+    const {
+        displayName,
+        email,
+        password,
+        onInputChange,
+        formState,
+        isFormValid,
+        emailValid,
+        passwordValid,
+    } = useForm(formData, formValidate);
+    const onSubmitForm = (e) => {
         e.preventDefault();
         console.log(formState);
     };
+    console.log(emailValid);
     return (
         <AuthLayout title="register">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmitForm}>
                 <Grid container>
                     <Grid item xs={12} sx={{ p: 1 }}>
                         <TextField
-                            id=""
                             label="Nombre"
                             type="text"
                             placeholder="Nombre Completo"
@@ -29,11 +48,12 @@ export const RegisterPage = () => {
                             name="displayName"
                             value={displayName}
                             onChange={onInputChange}
+                            error={true}
+                            helperText={"El nombre es Obliogatorio"}
                         />
                     </Grid>
                     <Grid item xs={12} sx={{ p: 1 }}>
                         <TextField
-                            id=""
                             label="Correo"
                             type="email"
                             placeholder="correo@gmail.com"
