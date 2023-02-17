@@ -37,6 +37,7 @@ export const RegisterPage = () => {
     console.log(emailValid);
     return (
         <AuthLayout title="register">
+            <h1>form validate {isFormValid ? "true" : "incorrecto"}</h1>
             <form onSubmit={onSubmitForm}>
                 <Grid container>
                     <Grid item xs={12} sx={{ p: 1 }}>
